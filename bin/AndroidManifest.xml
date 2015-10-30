@@ -3,9 +3,13 @@
     package="com.example.gridview"
     android:versionCode="1"
     android:versionName="1.0" >
-
+	<uses-permission 
+   	android:name="android.permission.READ_CALENDAR"
+   	/>
+	<uses-permission
+	    android:name="android.permission.WRITE_CALENDAR"/>"
     <uses-sdk
-        android:minSdkVersion="11"
+        android:minSdkVersion="14"
         android:targetSdkVersion="21" />
 
     <application
@@ -45,7 +49,11 @@
         <activity
             android:name=".Calender"
             android:label="@string/app_name" >
-        </activity>        
+        </activity>
+        <activity
+            android:name=".DetailedAssignmentActivity"
+            android:label="@string/app_name" >
+        </activity>           
     </application>
 
 </manifest>

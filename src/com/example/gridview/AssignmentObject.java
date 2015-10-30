@@ -10,46 +10,34 @@ public class AssignmentObject {
 	
 	String name;
 	String Description;
-	Date lastdate;
+	String lastdate;
+	long _id;
 	
-	AssignmentObject(String name,String description,String mm,String dd,String yyyy)
+	AssignmentObject(String name,String description,String mm,String dd,String yyyy,long id)
 	{
 		this.name=name;
 		this.Description=description;
+		this._id=id;
 		
-		int month=Integer.parseInt(mm);
-		int day=Integer.parseInt(dd);
-		int year=Integer.parseInt(yyyy);
-		SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd");
-		String dat=format.format(new Date(year,month,day));
-		Log.i("date",dat);
-		Log.i("year",""+year);
-		try {
+		String dat=dd+"/"+mm+"/"+yyyy;
+		this.lastdate=dat;
+		
+		/*try {
 			Date date=format.parse(dat);
 			this.lastdate=date;
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		
 	}
 	
-	AssignmentObject(String name,String description,String date)
+	AssignmentObject(String name,String description,String date,long id)
 	{
 		this.name=name;
 		this.Description=description;
-		
-		int dat=Integer.parseInt(date);
-		SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd");
-		
-		try {
-			Date dated=format.parse(date);
-			this.lastdate=dated;
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+		this.lastdate=date;
+		this._id=id;
 	}
 
 }
